@@ -716,7 +716,7 @@ export default function HomePage() {
               >
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-slate-200 bg-black">
                   <video
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-fit"
                     controls
                     preload="metadata"
                     poster={v.poster}
