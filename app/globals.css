@@ -1,26 +1,120 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* GLOBALS */
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.section-wrapper {
+  @apply max-w-6xl mx-auto px-4 lg:px-0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.section-heading {
+  @apply text-xs md:text-sm font-semibold tracking-[0.25em] uppercase text-sky-500;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight;
+}
+
+.section-subtitle {
+  @apply mt-4 text-sm md:text-base text-slate-600 max-w-2xl;
+}
+
+/* PANELS & ELEMENTS */
+
+.glass-panel {
+  @apply border border-slate-200 bg-white/80 backdrop-blur-xl rounded-3xl shadow-sm transition-transform transition-shadow duration-300;
+}
+
+.glass-panel:hover {
+  @apply shadow-xl -translate-y-[2px];
+}
+
+.badge-pill {
+  @apply inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs text-slate-700 shadow-sm;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-semibold bg-slate-900 text-slate-50 shadow-lg hover:bg-slate-800 transition;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Make content sit above glare */
+.btn-primary > * {
+  position: relative;
+  z-index: 10;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-semibold text-slate-800 border border-slate-300 bg-white hover:bg-slate-100 transition shadow-sm;
+}
+
+.tag-chip {
+  @apply rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium text-slate-700 shadow-sm;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* FLOATING CTA ANIMATION */
+
+.floating-btn {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* METALLIC GLARE EFFECT ON PRIMARY BUTTONS */
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.1)
+  );
+  transform: translateX(-120%);
+  animation: shine 2.8s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* SMALL HOVER POP FOR TAGS */
+
+.tag-chip:hover {
+  @apply -translate-y-[1px] shadow-md;
+  transition: all 0.25s ease;
 }
