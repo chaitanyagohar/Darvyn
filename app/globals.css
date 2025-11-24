@@ -21,7 +21,7 @@ body {
 }
 
 .section-subtitle {
-  @apply mt-4 text-sm md:text-base text-slate-600 max-w-2xl;
+  @apply mt-4 text-sm md:text-base text-black max-w-2xl;
 }
 
 /* PANELS & ELEMENTS */
@@ -39,7 +39,7 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-semibold bg-slate-900 text-slate-50 shadow-lg hover:bg-slate-800 transition;
+  @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm md:text-[15px] font-semibold bg-slate-900 text-slate-50 shadow-lg hover:bg-slate-800 transition;
   position: relative;
   overflow: hidden;
 }
@@ -51,7 +51,7 @@ body {
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-semibold text-slate-800 border border-slate-300 bg-white hover:bg-slate-100 transition shadow-sm;
+  @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm md:text-[15px] font-semibold text-slate-800 border border-slate-300 bg-white hover:bg-slate-100 transition shadow-sm;
 }
 
 .tag-chip {
