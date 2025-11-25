@@ -1404,14 +1404,15 @@ export default function HomePage() {
     {/* RIGHT: GOOGLE MAP */}
     <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.205348895005!2d77.59370467507842!3d13.028727513221284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16dbc39d8c6f%3A0xfd5cbc8bf4097755!2sKirloskar%20Tech%20Park!5e0!3m2!1sen!2sin!4v1708066000000!5m2!1sen!2sin"
-        width="100%"
-        height="350"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7510824709034!2d77.59281707484286!3d13.051509987271261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17a6421d008f%3A0x4a25ee61cfe77666!2sAwfis%20Kirloskar%20Tech%20Park%20Hebbal!5e0!3m2!1sen!2sin!4v1764091868807!5m2!1sen!2sin"
+  width="100%"
+  height="450"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+
     </div>
   </div>
 </section>
