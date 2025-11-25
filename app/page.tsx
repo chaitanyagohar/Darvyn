@@ -16,12 +16,11 @@ const videoTestimonials = [
     src: "/sanju.mp4",
   },
   {
-    name: "Narinder Mutneja, PapaToxy Consultants LLP",
-    role: "Residential & commercial projects in Noida",
+    name: "Vinay, Vagmine Water Homes Private Limited",
+    role: "Ultra Luxury Villas in Bangalore",
     highlight:
       "Cost per lead dropped and lead quality has never been this better for us.",
-    src: "/narinder.mp4",
-    poster: "/thumbnails/narinder.jpg",
+    src: "/vagamine.mp4",
   },
   {
     name: "Jalaj Kedia, Apni Properties",
@@ -29,7 +28,6 @@ const videoTestimonials = [
     highlight:
       "The quality and quantity of leads were so good that I couldn’t handle all of them at once.",
     src: "/jalaj.mp4",
-    poster: "/thumbnails/jalaj.jpg",
   },
 ];
 
@@ -121,6 +119,26 @@ const adScreenshots = [
       leads: 71,
       cpl: "₹138.96",
       spend: "₹9,866.28",
+    },
+  },
+  {
+    brand: "Vagamine Water Homes",
+    project: "Vagamine Redwood Campaign",
+    imageSrc: "/ss8.jpeg",
+    meta: {
+      leads: 59,
+      cpl: "₹75.84",
+      spend: "₹4,473.60",
+    },
+  },
+  {
+    brand: "Vagamine Water Homes",
+    project: "Vagamine Leaf Lake Campaign",
+    imageSrc: "/ss9.jpeg",
+    meta: {
+      leads: 400,
+      cpl: "₹33.60",
+      spend: "₹13,440.54",
     },
   },
 ];
@@ -482,341 +500,307 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* PROBLEM */}
-        <section
-          id="problem"
-          className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20"
-        >
-          <div className="space-y-4">
-            <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
-              Problem
-            </p>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900">
-              Ads are running. Leads are coming.{" "}
-              <span className="text-sky-600 block md:inline">
-                Revenue isn&apos;t predictable.
+        {/* PROBLEM - DARK THEME & FIXED SIDE PADDING */}
+ <section
+      id="problem"
+      className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-6 md:px-8 lg:px-12 pb-20"
+    >
+      <div className="space-y-4">
+        <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
+          Problem
+        </p>
+        <h2 className="text-3xl md:text-5xl font-black text-slate-800">
+          Ads are running. Leads are coming.{" "}
+          <span className="text-sky-600 block md:inline">
+            Revenue isn&apos;t predictable.
+          </span>
+        </h2>
+        <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">
+          If you&apos;re a CP, developer or broker, you&apos;ve probably felt at
+          least one of these in the last few months:
+        </p>
+      </div>
+
+      <div className="mt-10 grid md:grid-cols-2 gap-6">
+        <div className="rounded-2xl p-8 space-y-5 bg-[#0f1720] border border-slate-800">
+          <h3 className="text-xl font-bold text-white border-b pb-3 border-slate-800">
+            Common funnel roadblocks
+          </h3>
+          <ul className="text-[16px] md:text-lg text-slate-200 space-y-4 font-medium">
+            <li>
+              • Lots of leads coming in, but{" "}
+              <span className="font-bold text-white/90 bg-red-800/40 px-1">
+                most of them are fake or have no real intent
               </span>
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-800 font-medium leading-relaxed">
-              If you&apos;re a CP, developer or broker, you&apos;ve probably felt at
-              least one of these in the last few months:
-            </p>
-          </div>
-
-          <div className="mt-10 grid md:grid-cols-2 gap-6">
-            <div className="glass-panel p-8 space-y-5 bg-white border-slate-200">
-              <h3 className="text-xl font-bold text-slate-900 border-b pb-3 border-slate-100">
-                Common funnel roadblocks
-              </h3>
-              <ul className="text-[16px] md:text-lg text-slate-700 space-y-4 font-medium">
-                <li>
-                  • Lots of leads coming in, but{" "}
-                  <span className="font-bold text-slate-900 bg-red-50 px-1">
-                    most of them are fake or have no real intent
-                  </span>
-                  .
-                </li>
-                <li>
-                  • Enquiries keep increasing,{" "}
-                  <span className="font-bold text-slate-900 bg-red-50 px-1">
-                    very few actually show up on site
-                  </span>
-                  .
-                </li>
-                <li>
-                  • Leads get passed to sales, but{" "}
-                  <span className="font-bold text-slate-900 bg-red-50 px-1">
-                    there is no structured follow-up system
-                  </span>
-                  .
-                </li>
-                <li>
-                  • Different agencies for ads, landing pages &amp; CRM –{" "}
-                  <span className="font-bold text-slate-900 bg-red-50 px-1">
-                    there is no single owner of the full funnel
-                  </span>
-                  .
-                </li>
-              </ul>
-            </div>
-
-            <div className="glass-panel p-8 space-y-5 border-2 border-red-100 bg-red-50/50">
-              <h3 className="text-xl font-bold text-red-900 border-b pb-3 border-red-200">
-                The real cost (that doesn&apos;t show in dashboard)
-              </h3>
-              <ul className="text-[16px] md:text-lg text-red-900/80 space-y-4 font-medium">
-                <li>
-                  • Sales team burning time on low-intent, confused enquiries.
-                </li>
-                <li>
-                  • Missed follow-ups because no automations or nurture journeys
-                  exist.
-                </li>
-                <li>
-                  • Inventory stuck for months, delaying cash flow and new
-                  launches.
-                </li>
-                <li>
-                  • Zero clarity on which campaigns are{" "}
-                  <span className="font-bold text-red-950 underline decoration-red-300">
-                    truly printing revenue vs just generating noise
-                  </span>
-                  .
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* SOLUTION */}
-        <section
-          id="solution"
-          className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20"
-        >
-          <div className="space-y-4">
-            <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
-              Solution
-            </p>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900">
-              One AI-powered engine connecting{" "}
-              <span className="text-sky-600 block md:inline">
-                ads → leads → nurture → visits.
+              .
+            </li>
+            <li>
+              • Enquiries keep increasing,{" "}
+              <span className="font-bold text-white/90 bg-red-800/40 px-1">
+                very few actually show up on site
               </span>
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-800 font-medium leading-relaxed">
-              Instead of random campaigns and disconnected tools, we deploy a
-              unified system that tracks each lead from first click till site
-              visit and booking.
-            </p>
-          </div>
-
-          <div className="mt-10 grid md:grid-cols-4 gap-6 text-base text-slate-800">
-            <div className="glass-panel p-6 flex flex-col gap-3 bg-white border-slate-200 hover:border-sky-300 transition-colors duration-300">
-              <span className="text-xs font-black tracking-widest text-sky-600">
-                01 • ATTRACT
+              .
+            </li>
+            <li>
+              • Leads get passed to sales, but{" "}
+              <span className="font-bold text-white/90 bg-red-800/40 px-1">
+                there is no structured follow-up system
               </span>
-              <p className="text-lg font-bold text-slate-900">
-                High-intent ads
+              .
+            </li>
+            <li>
+              • Different agencies for ads, landing pages &amp; CRM –{" "}
+              <span className="font-bold text-white/90 bg-red-800/40 px-1">
+                there is no single owner of the full funnel
+              </span>
+              .
+            </li>
+          </ul>
+        </div>
+
+        <div className="rounded-2xl p-8 space-y-5 bg-[#0f1720] border border-rose-800">
+          <h3 className="text-xl font-bold text-rose-200 border-b pb-3 border-rose-800">
+            The real cost (that doesn&apos;t show in dashboard)
+          </h3>
+          <ul className="text-[16px] md:text-lg text-rose-200/90 space-y-4 font-medium">
+            <li>
+              • Sales team burning time on low-intent, confused enquiries.
+            </li>
+            <li>
+              • Missed follow-ups because no automations or nurture journeys
+              exist.
+            </li>
+            <li>
+              • Inventory stuck for months, delaying cash flow and new
+              launches.
+            </li>
+            <li>
+              • Zero clarity on which campaigns are{" "}
+              <span className="font-bold underline decoration-rose-600">
+                truly printing revenue vs just generating noise
+              </span>
+              .
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+        {/* SOLUTION - DARK THEME & FIXED SIDE PADDING */}
+        <section id="solution" className="bg-[#141414] text-slate-50">
+          <div className="mx-auto max-w-6xl px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12">
+            <div className="space-y-4">
+              <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
+                Solution
               </p>
-              <p className="leading-relaxed">
-                Creative + copy tuned for CPs &amp; developers to attract
-                serious buyers, not just form fillers.
+              <h2 className="text-3xl md:text-5xl font-black text-slate-50 leading-tight">
+                One AI-powered engine connecting{" "}
+                <span className="text-sky-600 block md:inline">
+                  ads → leads → nurture → visits.
+                </span>
+              </h2>
+              <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed">
+                Instead of random campaigns and disconnected tools, we deploy a
+                unified system that tracks each lead from first click till site
+                visit and booking.
               </p>
             </div>
-            <div className="glass-panel p-6 flex flex-col gap-3 bg-white border-slate-200 hover:border-sky-300 transition-colors duration-300">
-              <span className="text-xs font-black tracking-widest text-sky-600">
-                02 • NURTURE
-              </span>
-              <p className="text-lg font-bold text-slate-900">AI follow-ups</p>
-              <p className="leading-relaxed">
-                Automated sequences over WhatsApp, email &amp; SMS warm up leads
-                before your sales team calls.
-              </p>
-            </div>
-            <div className="glass-panel p-6 flex flex-col gap-3 bg-white border-slate-200 hover:border-sky-300 transition-colors duration-300">
-              <span className="text-xs font-black tracking-widest text-sky-600">
-                03 • CONVERT
-              </span>
-              <p className="text-lg font-bold text-slate-900">
-                Site visit engine
-              </p>
-              <p className="leading-relaxed">
-                Smart reminders, time-slot nudges &amp; objection handling to
-                lock in confirmed site visits.
-              </p>
-            </div>
-            <div className="glass-panel p-6 flex flex-col gap-3 bg-white border-slate-200 hover:border-sky-300 transition-colors duration-300">
-              <span className="text-xs font-black tracking-widest text-sky-600">
-                04 • SCALE
-              </span>
-              <p className="text-lg font-bold text-slate-900">
-                Performance loop
-              </p>
-              <p className="leading-relaxed">
-                Weekly optimisation on creatives, audiences &amp; funnels to
-                scale what&apos;s working.
-              </p>
-            </div>
-          </div>
 
-          {/* BIG CTA after solution */}
-          <div className="mt-12 flex justify-center">
-            <button
-              onClick={handlePrimaryCTA}
-              className="relative btn-primary floating-btn group overflow-hidden bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 text-white shadow-2xl shadow-sky-300/60 
-              text-xl md:text-2xl font-black uppercase tracking-wide px-10 md:px-14 py-6 md:py-7 rounded-2xl"
-            >
-              <span className="relative z-10 flex items-center justify-center gap-3">
-                Deploy This Engine Now
-                <ChevronRight className="h-8 w-8 stroke-[4px]" />
-              </span>
-              <span className="pointer-events-none absolute inset-0">
-                <span className="absolute inset-0 -translate-x-full bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent)] group-hover:translate-x-full transition-transform duration-700 ease-out" />
-              </span>
-            </button>
-          </div>
-        </section>
-
-        {/* PROCESS */}
-        <section
-          id="process"
-          className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20"
-        >
-          <div className="space-y-4">
-            <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
-              Process
-            </p>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900">
-              What happens in your first 90 days with Jade_leads.
-            </h2>
-          </div>
-
-          <div className="mt-10 grid md:grid-cols-[1.3fr,1fr] gap-8 items-start">
-            <ol className="space-y-5 text-base text-slate-800">
-              {/* 01 */}
-              <li className="glass-panel p-5 flex gap-4 bg-white border-slate-200">
-                <div className="mt-1 h-8 w-8 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
-                  01
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-slate-900">
-                    Deep-dive growth &amp; inventory audit
-                  </p>
-                  <p className="mt-2 font-medium">
-                    We map your projects, ticket sizes, current funnel and sales
-                    reality to identify quick wins, leaks and realistic revenue
-                    targets.
-                  </p>
-                </div>
-              </li>
-
-              {/* 02 */}
-              <li className="glass-panel p-5 flex gap-4 bg-white border-slate-200">
-                <div className="mt-1 h-8 w-8 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
-                  02
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-slate-900">
-                    AI Ideal Customer Persona &amp; Creative Scripting
-                  </p>
-                  <p className="mt-2 font-medium">
-                    We build AI-assisted customer personas and human-plus-AI ad
-                    scripting so your creatives stand out in the feed and never
-                    go unnoticed by the right buyers.
-                  </p>
-                </div>
-              </li>
-
-              {/* 03 */}
-              <li className="glass-panel p-5 flex gap-4 bg-white border-slate-200">
-                <div className="mt-1 h-8 w-8 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
-                  03
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-slate-900">
-                    Campaign &amp; funnel rollout
-                  </p>
-                  <p className="mt-2 font-medium">
-                    AI-powered Meta &amp; Google campaigns go live with aligned
-                    landing pages, tracking and routing – reaching ideal buyers,
-                    warming them up and pushing site-visit-ready leads into your
-                    calendar.
-                  </p>
-                </div>
-              </li>
-
-              {/* 04 */}
-              <li className="glass-panel p-5 flex gap-4 bg-white border-slate-200">
-                <div className="mt-1 h-8 w-8 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
-                  04
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-slate-900">
-                    AI nurture flows &amp; site visit engine
-                  </p>
-                  <p className="mt-2 font-medium">
-                    Our AI chatbot and integrated CRM start conversing with
-                    leads, understanding intent and nudging them to book calls
-                    and confirmed site visits – without your team chasing every
-                    enquiry manually.
-                  </p>
-                </div>
-              </li>
-
-              {/* 05 */}
-              <li className="glass-panel p-5 flex gap-4 bg-white border-slate-200">
-                <div className="mt-1 h-8 w-8 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
-                  05
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-slate-900">
-                    AI-powered regular follow-up
-                  </p>
-                  <p className="mt-2 font-medium">
-                    The system keeps reminding and re-engaging prospects with
-                    WhatsApp, email and SMS drip sequences – building bond with
-                    your brand and pushing them to either book a call or a site
-                    visit.
-                  </p>
-                </div>
-              </li>
-
-              {/* 06 */}
-              <li className="glass-panel p-5 flex gap-4 bg-white border-slate-200">
-                <div className="mt-1 h-8 w-8 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
-                  06
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-slate-900">
-                    Weekly performance review &amp; scale
-                  </p>
-                  <p className="mt-2 font-medium">
-                    Every week we review numbers with you, refine creatives, fix
-                    leaks and scale the campaigns that are actually printing
-                    revenue – not just delivering clicks or cheap leads.
-                  </p>
-                </div>
-              </li>
-            </ol>
-
-            <div className="glass-panel p-8 space-y-8 bg-white border-2 border-slate-200 sticky top-10 shadow-2xl shadow-sky-100/50">
-              <div>
-                <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-sky-600 mb-2">
-                  What you leave the call with
-                </p>
-                <p className="text-2xl font-black text-slate-900 leading-tight">
-                  A 90-day real estate growth gameplan tailored to your project.
+            <div className="mt-8 grid md:grid-cols-4 gap-6 text-base">
+              <div className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 hover:border-sky-400 transition-colors duration-300">
+                <span className="text-xs font-black tracking-widest text-sky-600">
+                  01 • ATTRACT
+                </span>
+                <p className="text-lg font-bold text-slate-50 mt-2">High-intent ads</p>
+                <p className="mt-2 text-slate-300 leading-relaxed">
+                  Creative + copy tuned for CPs &amp; developers to attract
+                  serious buyers, not just form fillers.
                 </p>
               </div>
-              <ul className="text-base text-slate-800 space-y-3 font-bold">
-                <li className="flex items-center gap-2">
-                  <span className="text-sky-500 text-xl">•</span> Ideal buyer
-                  personas &amp; targeting angles.
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-sky-500 text-xl">•</span> Recommended
-                  Meta &amp; Google campaign structure.
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-sky-500 text-xl">•</span> Nurture
-                  sequence outline (WhatsApp, Email, SMS).
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-sky-500 text-xl">•</span> Site visit and
-                  follow-up SOPs for your sales team.
-                </li>
-              </ul>
 
+              <div className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 hover:border-sky-400 transition-colors duration-300">
+                <span className="text-xs font-black tracking-widest text-sky-600">
+                  02 • NURTURE
+                </span>
+                <p className="text-lg font-bold text-slate-50 mt-2">AI follow-ups</p>
+                <p className="mt-2 text-slate-300 leading-relaxed">
+                  Automated sequences over WhatsApp, email &amp; SMS warm up leads
+                  before your sales team calls.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 hover:border-sky-400 transition-colors duration-300">
+                <span className="text-xs font-black tracking-widest text-sky-600">
+                  03 • CONVERT
+                </span>
+                <p className="text-lg font-bold text-slate-50 mt-2">Site visit engine</p>
+                <p className="mt-2 text-slate-300 leading-relaxed">
+                  Smart reminders, time-slot nudges &amp; objection handling to
+                  lock in confirmed site visits.
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 hover:border-sky-400 transition-colors duration-300">
+                <span className="text-xs font-black tracking-widest text-sky-600">
+                  04 • SCALE
+                </span>
+                <p className="text-lg font-bold text-slate-50 mt-2">Performance loop</p>
+                <p className="mt-2 text-slate-300 leading-relaxed">
+                  Weekly optimisation on creatives, audiences &amp; funnels to
+                  scale what&apos;s working.
+                </p>
+              </div>
+            </div>
+
+            {/* BIG CTA after solution */}
+            <div className="mt-12 flex justify-center">
               <button
                 onClick={handlePrimaryCTA}
-                className="btn-primary floating-btn group w-full justify-center mt-2 relative overflow-hidden 
-                text-lg md:text-xl font-extrabold uppercase tracking-wide py-6 shadow-xl rounded-xl"
+                className="relative btn-primary floating-btn group overflow-hidden bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 text-white shadow-2xl shadow-sky-300/60 
+                text-xl md:text-2xl font-black uppercase tracking-wide px-10 md:px-14 py-6 md:py-7 rounded-2xl"
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  Book My 90-Day Gameplan Call
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  Deploy This Engine Now
+                  <ChevronRight className="h-8 w-8 stroke-[4px]" />
                 </span>
-                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent)] group-hover:translate-x-full transition-transform duration-700 ease-out" />
+                <span className="pointer-events-none absolute inset-0">
+                  <span className="absolute inset-0 -translate-x-full bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent)] group-hover:translate-x-full transition-transform duration-700 ease-out" />
+                </span>
               </button>
+            </div>
+          </div>
+        </section>
+
+        {/* PROCESS - DARK THEME & FIXED SIDE PADDING */}
+        <section id="process" className="bg-[#141414] text-slate-50">
+          <div className="mx-auto max-w-6xl px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12">
+            <div className="space-y-4">
+              <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
+                Process
+              </p>
+              <h2 className="text-3xl md:text-5xl font-black text-slate-50">
+                What happens in your first 90 days with Jade_leads.
+              </h2>
+            </div>
+
+            <div className="mt-8 grid md:grid-cols-[1.3fr,1fr] gap-8 items-start">
+              <ol className="space-y-5">
+                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                  <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
+                    01
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg text-slate-50">Deep-dive growth &amp; inventory audit</p>
+                    <p className="mt-2 text-slate-300 font-medium leading-relaxed">
+                      We map your projects, ticket sizes, current funnel and sales
+                      reality to identify quick wins, leaks and realistic revenue
+                      targets.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                  <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
+                    02
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg text-slate-50">AI Ideal Customer Persona &amp; Creative Scripting</p>
+                    <p className="mt-2 text-slate-300 font-medium leading-relaxed">
+                      We build AI-assisted customer personas and human-plus-AI ad
+                      scripting so your creatives stand out in the feed and never
+                      go unnoticed by the right buyers.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                  <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
+                    03
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg text-slate-50">Campaign &amp; funnel rollout</p>
+                    <p className="mt-2 text-slate-300 font-medium leading-relaxed">
+                      AI-powered Meta &amp; Google campaigns go live with aligned
+                      landing pages, tracking and routing – reaching ideal buyers,
+                      warming them up and pushing site-visit-ready leads into your
+                      calendar.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                  <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
+                    04
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg text-slate-50">AI nurture flows &amp; site visit engine</p>
+                    <p className="mt-2 text-slate-300 font-medium leading-relaxed">
+                      Our AI chatbot and integrated CRM start conversing with
+                      leads, understanding intent and nudging them to book calls
+                      and confirmed site visits – without your team chasing every
+                      enquiry manually.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                  <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
+                    05
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg text-slate-50">AI-powered regular follow-up</p>
+                    <p className="mt-2 text-slate-300 font-medium leading-relaxed">
+                      The system keeps reminding and re-engaging prospects with WhatsApp, email and SMS drip sequences – building bond with
+                      your brand and pushing them to either book a call or a site
+                      visit.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                  <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
+                    06
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg text-slate-50">Weekly performance review &amp; scale</p>
+                    <p className="mt-2 text-slate-300 font-medium leading-relaxed">
+                      Every week we review numbers with you, refine creatives, fix
+                      leaks and scale the campaigns that are actually printing
+                      revenue – not just delivering clicks or cheap leads.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+
+              <div className="sticky top-10">
+                <div className="rounded-2xl bg-slate-800 border border-slate-700 p-6 md:p-8 lg:p-10 shadow-2xl">
+                  <div>
+                    <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-sky-600 mb-2">
+                      What you leave the call with
+                    </p>
+                    <p className="text-2xl font-black text-slate-50 leading-tight">
+                      A 90-day real estate growth gameplan tailored to your project.
+                    </p>
+                  </div>
+                  <ul className="text-slate-200 mt-6 space-y-3 font-bold">
+                    <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Ideal buyer personas &amp; targeting angles.</li>
+                    <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Recommended Meta &amp; Google campaign structure.</li>
+                    <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Nurture sequence outline (WhatsApp, Email, SMS).</li>
+                    <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Site visit and follow-up SOPs for your sales team.</li>
+                  </ul>
+
+                  <button
+                    onClick={handlePrimaryCTA}
+                    className="btn-primary floating-btn group w-full justify-center mt-6 relative overflow-hidden 
+                    text-lg md:text-xl font-extrabold uppercase tracking-wide py-3 md:py-4 shadow-xl rounded-xl"
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      Book My 90-Day Gameplan Call
+                    </span>
+                    <span className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent)] group-hover:translate-x-full transition-transform duration-700 ease-out" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -855,25 +839,24 @@ export default function HomePage() {
             {videoTestimonials.map((v, idx) => (
               <article
                 key={idx}
-                className="glass-panel p-5 flex flex-col gap-4 bg-slate-50 border-slate-200"
+                className="rounded-2xl p-5 flex flex-col gap-4 bg-[#141414] "
               >
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-slate-200 bg-black shadow-inner">
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-inner">
                   <video
                     className="h-full w-full object-fit"
                     controls
                     preload="metadata"
-                    poster={v.poster}
                   >
                     <source src={v.src} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-slate-900">{v.name}</p>
-                  <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide mt-1">
+                  <p className="text-sm font-bold text-slate-100">{v.name}</p>
+                  <p className="text-xs font-semibold text-slate-50 uppercase tracking-wide mt-1">
                     {v.role}
                   </p>
-                  <p className="mt-3 text-sm italic font-medium text-slate-800 border-l-2 border-sky-400 pl-3">
+                  <p className="mt-3 text-sm italic font-medium text-cyan-400 border-l-2 border-sky-400 pl-3">
                     “{v.highlight}”
                   </p>
                 </div>
@@ -935,6 +918,7 @@ export default function HomePage() {
           </div>
         </section>
 
+      
         {/* RECENT SCREENSHOTS FROM AD ACCOUNTS */}
         <section
           id="screenshots-ads"
@@ -942,7 +926,7 @@ export default function HomePage() {
         >
           <div className="space-y-4">
             <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
-              Written Reviews
+              Google Ad Account Spent
             </p>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900">
               Recent Screenshots from Ad Accounts.
