@@ -426,7 +426,7 @@ export default function HomePage() {
               Offer
             </p>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900">
-              The Jade_leads Real Estate Growth System™
+              The Darvyn Real Estate Growth System™
             </h2>
             <p className="text-xl md:text-2xl text-slate-800 font-medium leading-relaxed max-w-4xl">
               A done-with-you growth engine that combines{" "}
