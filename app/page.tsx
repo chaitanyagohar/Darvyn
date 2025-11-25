@@ -671,7 +671,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* PROCESS - DARK THEME & FIXED SIDE PADDING */}
+       {/* PROCESS - DARK THEME & FIXED SIDE PADDING */}
         <section id="process" className="bg-[#141414] text-slate-50">
           <div className="mx-auto max-w-6xl px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12">
             <div className="space-y-4">
@@ -685,7 +685,7 @@ export default function HomePage() {
 
             <div className="mt-8 grid md:grid-cols-[1.3fr,1fr] gap-8 items-start">
               <ol className="space-y-5">
-                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                <li className="rounded-2xl bg-[#1b1b1b] border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
                   <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
                     01
                   </div>
@@ -699,7 +699,7 @@ export default function HomePage() {
                   </div>
                 </li>
 
-                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                <li className="rounded-2xl bg-[#1b1b1b] border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
                   <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
                     02
                   </div>
@@ -713,7 +713,7 @@ export default function HomePage() {
                   </div>
                 </li>
 
-                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                <li className="rounded-2xl bg-[#1b1b1b] border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
                   <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
                     03
                   </div>
@@ -728,7 +728,7 @@ export default function HomePage() {
                   </div>
                 </li>
 
-                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                <li className="rounded-2xl bg-[#1b1b1b] border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
                   <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
                     04
                   </div>
@@ -743,7 +743,7 @@ export default function HomePage() {
                   </div>
                 </li>
 
-                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                <li className="rounded-2xl bg-[#1b1b1b] border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
                   <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
                     05
                   </div>
@@ -757,7 +757,7 @@ export default function HomePage() {
                   </div>
                 </li>
 
-                <li className="rounded-2xl bg-slate-800 border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
+                <li className="rounded-2xl bg-[#1b1b1b] border border-slate-700 p-4 md:p-6 lg:p-8 flex gap-4">
                   <div className="mt-1 h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-sm font-bold text-sky-700 shrink-0">
                     06
                   </div>
@@ -773,7 +773,7 @@ export default function HomePage() {
               </ol>
 
               <div className="sticky top-10">
-                <div className="rounded-2xl bg-slate-800 border border-slate-700 p-6 md:p-8 lg:p-10 shadow-2xl">
+                <div className="rounded-2xl bg-[#1b1b1b] border border-slate-700 p-6 md:p-8 lg:p-10 shadow-2xl">
                   <div>
                     <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-sky-600 mb-2">
                       What you leave the call with
@@ -806,64 +806,69 @@ export default function HomePage() {
         </section>
 
         {/* CLIENT STORIES (VIDEOS) */}
-        <section
-          id="client-stories"
-          className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20"
+       <section id="client-stories" className="w-full bg-[#141414] text-slate-50">
+  <div className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20">
+
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+      <div className="space-y-4">
+        <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
+          Client Stories
+        </p>
+        <h2 className="text-3xl md:text-5xl font-black text-slate-50">
+          Video testimonials from real operators.
+        </h2>
+        <p className="text-xl text-slate-300 font-medium leading-relaxed max-w-2xl">
+          Hear directly from founders and teams who plugged our system in
+          and scaled faster with less chaos.
+        </p>
+      </div>
+
+      <div className="flex items-center justify-start md:justify-end">
+        <button
+          onClick={handlePrimaryCTA}
+          className="btn-primary floating-btn group relative overflow-hidden 
+          text-lg font-bold px-10 py-5 rounded-xl shadow-lg 
+          bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 text-white"
         >
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-            <div className="space-y-4">
-              <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
-                Client Stories
-              </p>
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900">
-                Video testimonials from real operators.
-              </h2>
-              <p className="text-xl text-slate-800 font-medium leading-relaxed max-w-2xl">
-                Hear directly from founders and teams who plugged our system in
-                and scaled faster with less chaos.
-              </p>
-            </div>
-            <div className="flex items-center justify-start md:justify-end">
-              <button
-                onClick={handlePrimaryCTA}
-                className="btn-primary floating-btn group relative overflow-hidden 
-                text-lg font-bold px-10 py-5 rounded-xl shadow-lg"
-              >
-                <span className="relative z-10">Book Your Growth Call</span>
-                <span className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.9),transparent)] group-hover:translate-x-full transition-transform duration-700 ease-out" />
-              </button>
-            </div>
+          <span className="relative z-10">Book Your Growth Call</span>
+          <span className="pointer-events-none absolute inset-0 -translate-x-full 
+          bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.9),transparent)] 
+          group-hover:translate-x-full transition-transform duration-700 ease-out" />
+        </button>
+      </div>
+    </div>
+
+    <div className="mt-10 grid md:grid-cols-3 gap-8">
+      {videoTestimonials.map((v, idx) => (
+        <article
+          key={idx}
+          className="rounded-2xl p-5 flex flex-col gap-4 bg-[#1b1b1b] border border-slate-700"
+        >
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-inner">
+            <video
+              className="h-full w-full object-fit"
+              controls
+              preload="metadata"
+            >
+              <source src={v.src} type="video/mp4" />
+            </video>
           </div>
 
-          <div className="mt-10 grid md:grid-cols-3 gap-8">
-            {videoTestimonials.map((v, idx) => (
-              <article
-                key={idx}
-                className="rounded-2xl p-5 flex flex-col gap-4 bg-[#141414] "
-              >
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-inner">
-                  <video
-                    className="h-full w-full object-fit"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src={v.src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-slate-100">{v.name}</p>
-                  <p className="text-xs font-semibold text-slate-50 uppercase tracking-wide mt-1">
-                    {v.role}
-                  </p>
-                  <p className="mt-3 text-sm italic font-medium text-cyan-400 border-l-2 border-sky-400 pl-3">
-                    “{v.highlight}”
-                  </p>
-                </div>
-              </article>
-            ))}
+          <div>
+            <p className="text-sm font-bold text-slate-100">{v.name}</p>
+            <p className="text-xs font-semibold text-slate-300 uppercase tracking-wide mt-1">
+              {v.role}
+            </p>
+            <p className="mt-3 text-sm italic font-medium text-cyan-400 border-l-2 border-sky-400 pl-3">
+              “{v.highlight}”
+            </p>
           </div>
-        </section>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>
 
         {/* WRITTEN HIGHLIGHT TESTIMONIAL */}
         <section
