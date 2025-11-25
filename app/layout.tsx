@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Darvyn Digital | Real Estate Growth Engine",
   description:
-    "We help CPs & Developers build a predictable Lead → Nurture → Site Visit → Sales engine using AI & Performance Marketing.",
+    "We help Realtors & Developers build a predictable Lead → Nurture → Site Visit → Sales engine using AI & Performance Marketing.",
 };
 
 export default function RootLayout({

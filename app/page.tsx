@@ -11,7 +11,8 @@ import {
   X,      // Added for popup close button
   User,   // Added for name field
   Mail,   // Added for email field
-  Phone   // Added for phone field
+  Phone, 
+  AlertTriangle  // Added for phone field
 } from "lucide-react";
 
 // ---------- DATA ----------
@@ -72,6 +73,26 @@ const writtenHighlightTestimonials = [
 // RECENT SCREENSHOTS FROM AD ACCOUNTS – images from /public
 const adScreenshots = [
   {
+    brand: "Vagamine Water Homes",
+    project: "Vagamine Redwood Campaign",
+    imageSrc: "/ss8.jpeg",
+    meta: {
+      leads: 59,
+      cpl: "₹75.84",
+      spend: "₹4,473.60",
+    },
+  },
+  {
+    brand: "Vagamine Water Homes",
+    project: "Vagamine Leaf Lake Campaign",
+    imageSrc: "/ss9.jpeg",
+    meta: {
+      leads: 400,
+      cpl: "₹33.60",
+      spend: "₹13,440.54",
+    },
+  },
+  {
     brand: "PAPATOXY CONSULTANTS LLP",
     project: "Yamuna Expressway Campaign",
     imageSrc: "/ss1.jpeg",
@@ -131,26 +152,7 @@ const adScreenshots = [
       spend: "₹9,866.28",
     },
   },
-  {
-    brand: "Vagamine Water Homes",
-    project: "Vagamine Redwood Campaign",
-    imageSrc: "/ss8.jpeg",
-    meta: {
-      leads: 59,
-      cpl: "₹75.84",
-      spend: "₹4,473.60",
-    },
-  },
-  {
-    brand: "Vagamine Water Homes",
-    project: "Vagamine Leaf Lake Campaign",
-    imageSrc: "/ss9.jpeg",
-    meta: {
-      leads: 400,
-      cpl: "₹33.60",
-      spend: "₹13,440.54",
-    },
-  },
+  
 ];
 
 // DRIP FLOW AUTOMATIONS – images from /public
@@ -284,6 +286,16 @@ export default function HomePage() {
                     by turning ad spend into booked site visits instead of just
                     clicks and enquiries.
                   </p>
+                </div>
+
+                {/* --- WARNING LINE --- */}
+                <div className="max-w-xl">
+                  <div className="inline-flex items-start md:items-center gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-2 text-sm font-bold text-red-900 shadow-sm">
+                    <AlertTriangle className="h-5 w-5 text-red-600 shrink-0" />
+                    <span>
+                      Please Note: If your monthly marketing budget is less than ₹50,000, please skip booking a call.
+                    </span>
+                  </div>
                 </div>
 
                 {/* MOBILE VIDEO */}
@@ -490,7 +502,7 @@ export default function HomePage() {
                   </p>
                 </div>
                 <ul className="mt-6 text-[15px] font-bold text-slate-300 space-y-2">
-                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Ad strategy for CPs & Developers</li>
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Ad strategy for Realtors & Developers</li>
                   <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Audience segmentation & creatives</li>
                   <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Retargeting journeys that follow up 24/7</li>
                 </ul>
@@ -648,7 +660,7 @@ export default function HomePage() {
                 </span>
                 <p className="text-lg font-bold text-slate-50 mt-2">High-intent ads</p>
                 <p className="mt-2 text-slate-300 leading-relaxed">
-                  Creative + copy tuned for CPs & developers to attract
+                  Creative + copy tuned for Realtors & Developers to attract
                   serious buyers, not just form fillers.
                 </p>
               </div>
