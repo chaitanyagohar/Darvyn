@@ -2,7 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronRight, PhoneCall, MapPin, Play, Star } from "lucide-react";
+import { 
+  ChevronRight, 
+  PhoneCall, 
+  MapPin, 
+  Play, 
+  Star, 
+  X,      // Added for popup close button
+  User,   // Added for name field
+  Mail,   // Added for email field
+  Phone   // Added for phone field
+} from "lucide-react";
 
 // ---------- DATA ----------
 
@@ -172,6 +182,9 @@ export default function HomePage() {
   const [activeAdIndex, setActiveAdIndex] = useState(0);
   const [activeFlowIndex, setActiveFlowIndex] = useState(0);
 
+  // --- NEW: State for the Popup ---
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -180,8 +193,25 @@ export default function HomePage() {
   };
 
   const handlePrimaryCTA = () => {
-    scrollTo("process");
+    // Open the popup when they click the main buttons
+    setIsModalOpen(true);
   };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Add API logic here
+    alert("Request received!");
+    setIsModalOpen(false);
+  };
+
+  // --- NEW: Auto-open popup after 3 seconds ---
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsModalOpen(true);
+    }, 3000); // 3000ms = 3 seconds
+
+    return () => clearTimeout(timer); // Cleanup timer if component unmounts
+  }, []);
 
   const activeWritten = writtenHighlightTestimonials[activeWrittenIndex];
 
@@ -237,7 +267,7 @@ export default function HomePage() {
                   <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] font-black tracking-tight text-slate-950 leading-[1.1]">
                     We help{" "}
                     <span className="bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 bg-clip-text text-transparent">
-                      CPs &amp; Developers
+                      CPs & Developers
                     </span>{" "}
                     build a predictable
                     <span className="block mt-2 text-slate-900">
@@ -278,7 +308,7 @@ export default function HomePage() {
                         Channel Partners (CPs)
                       </span>
                       <span className="tag-chip w-full justify-center bg-sky-50 border-sky-100 py-2">
-                        Builders &amp; Developers
+                        Builders & Developers
                       </span>
                       <span className="tag-chip w-full justify-center bg-sky-50 border-sky-100 py-2">
                         Real Estate Brokers
@@ -322,11 +352,11 @@ export default function HomePage() {
                 <div className="flex flex-wrap items-center gap-3 text-sm md:text-base text-slate-800 font-bold">
                   <div className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                    100+ campaigns for builders, CPs &amp; brokers
+                    100+ campaigns for builders, CPs & brokers
                   </div>
                   <span className="hidden sm:inline-block h-1 w-1 bg-slate-400 rounded-full" />
                   <span>
-                    Meta &amp; Google Ads • AI Drip Flows • Site Visit Engine
+                    Meta & Google Ads • AI Drip Flows • Site Visit Engine
                   </span>
                 </div>
 
@@ -350,7 +380,7 @@ export default function HomePage() {
                         </span>
                       </div>
                       <p className="text-xs font-semibold text-slate-600 mt-1">
-                        Trusted by CPs, Developers &amp; Brokers across major
+                        Trusted by CPs, Developers & Brokers across major
                         Indian metros.
                       </p>
                     </div>
@@ -392,7 +422,7 @@ export default function HomePage() {
                       Channel Partners (CPs)
                     </span>
                     <span className="tag-chip w-full justify-center bg-sky-50 border-sky-100 py-2.5">
-                      Builders &amp; Developers
+                      Builders & Developers
                     </span>
                     <span className="tag-chip w-full justify-center bg-sky-50 border-sky-100 py-2.5">
                       Real Estate Brokers
@@ -416,86 +446,91 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* OFFER */}
+        {/* OFFER - DARK THEME */}
         <section
           id="offer"
-          className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20 pt-8"
+          className="bg-[#141414] text-slate-50 w-full"
         >
-          <div className="space-y-4">
-            <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
-              Offer
-            </p>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900">
-              The Darvyn Real Estate Growth System™
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-800 font-medium leading-relaxed max-w-4xl">
-              A done-with-you growth engine that combines{" "}
-              <strong className="text-slate-950 font-bold bg-yellow-50">
-                Meta &amp; Google Ads
-              </strong>
-              ,{" "}
-              <strong className="text-slate-950 font-bold bg-yellow-50">
-                AI-led nurturing flows
-              </strong>
-              , and{" "}
-              <strong className="text-slate-950 font-bold bg-yellow-50">
-                conversion-optimized funnels
-              </strong>{" "}
-              to turn ad spends into booked site visits and closings.
-            </p>
-          </div>
-
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-            <div className="glass-panel p-6 flex flex-col justify-between bg-white border-slate-200 hover:shadow-xl transition duration-300">
-              <div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  AI-Backed Lead Engine
-                </h3>
-                <p className="mt-3 text-base font-medium text-slate-700 leading-relaxed">
-                  Full-funnel Meta &amp; Google campaigns tailored to your
-                  inventory and ticket size – optimized for lead quality, not
-                  just CPL.
-                </p>
-              </div>
-              <ul className="mt-6 text-[15px] font-bold text-slate-900 space-y-2">
-                <li>• Ad strategy for CPs &amp; Developers</li>
-                <li>• Audience segmentation &amp; creatives</li>
-                <li>• Retargeting journeys that follow up 24/7</li>
-              </ul>
+          <div className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20 pt-12 md:pt-20">
+            <div className="space-y-4">
+              <p className="text-sm font-bold uppercase tracking-widest text-sky-600">
+                Offer
+              </p>
+              <h2 className="text-3xl md:text-5xl font-black text-slate-50">
+                The Darvyn Real Estate Growth System™
+              </h2>
+              <p className="text-xl md:text-2xl text-slate-300 font-medium leading-relaxed max-w-4xl">
+                A done-with-you growth engine that combines{" "}
+                <strong className="text-white font-bold bg-sky-500/20 px-1 rounded border border-sky-500/30">
+                  Meta & Google Ads
+                </strong>
+                ,{" "}
+                <strong className="text-white font-bold bg-sky-500/20 px-1 rounded border border-sky-500/30">
+                  AI-led nurturing flows
+                </strong>
+                , and{" "}
+                <strong className="text-white font-bold bg-sky-500/20 px-1 rounded border border-sky-500/30">
+                  conversion-optimized funnels
+                </strong>{" "}
+                to turn ad spends into booked site visits and closings.
+              </p>
             </div>
 
-            <div className="glass-panel p-6 flex flex-col justify-between bg-white border-slate-200 hover:shadow-xl transition duration-300">
-              <div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  Lead → Nurture → Site Visit Flows
-                </h3>
-                <p className="mt-3 text-base font-medium text-slate-700 leading-relaxed">
-                  AI-driven email, WhatsApp &amp; SMS sequences that move leads
-                  from enquiry to confirmed site visits.
-                </p>
+            <div className="mt-10 grid md:grid-cols-3 gap-6">
+              {/* Card 1 */}
+              <div className="rounded-2xl p-6 flex flex-col justify-between bg-[#1b1b1b] border border-slate-700 hover:border-sky-500/40 hover:shadow-2xl hover:shadow-sky-900/20 transition duration-300">
+                <div>
+                  <h3 className="text-xl font-bold text-white">
+                    AI-Backed Lead Engine
+                  </h3>
+                  <p className="mt-3 text-base font-medium text-slate-400 leading-relaxed">
+                    Full-funnel Meta & Google campaigns tailored to your
+                    inventory and ticket size – optimized for lead quality, not
+                    just CPL.
+                  </p>
+                </div>
+                <ul className="mt-6 text-[15px] font-bold text-slate-300 space-y-2">
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Ad strategy for CPs & Developers</li>
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Audience segmentation & creatives</li>
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Retargeting journeys that follow up 24/7</li>
+                </ul>
               </div>
-              <ul className="mt-6 text-[15px] font-bold text-slate-900 space-y-2">
-                <li>• Multi-step nurture flows</li>
-                <li>• Auto-follow ups &amp; reminders</li>
-                <li>• Lead scoring to prioritise hot leads</li>
-              </ul>
-            </div>
 
-            <div className="glass-panel p-6 flex flex-col justify-between border-2 border-sky-200 bg-sky-50/50 hover:shadow-xl transition duration-300">
-              <div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  Performance Dashboard &amp; Gameplan
-                </h3>
-                <p className="mt-3 text-base font-medium text-slate-700 leading-relaxed">
-                  See where every rupee is going – from spend → leads → site
-                  visits → bookings in one clear view.
-                </p>
+              {/* Card 2 */}
+              <div className="rounded-2xl p-6 flex flex-col justify-between bg-[#1b1b1b] border border-slate-700 hover:border-sky-500/40 hover:shadow-2xl hover:shadow-sky-900/20 transition duration-300">
+                <div>
+                  <h3 className="text-xl font-bold text-white">
+                    Lead → Nurture → Site Visit Flows
+                  </h3>
+                  <p className="mt-3 text-base font-medium text-slate-400 leading-relaxed">
+                    AI-driven email, WhatsApp & SMS sequences that move leads
+                    from enquiry to confirmed site visits.
+                  </p>
+                </div>
+                <ul className="mt-6 text-[15px] font-bold text-slate-300 space-y-2">
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Multi-step nurture flows</li>
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Auto-follow ups & reminders</li>
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Lead scoring to prioritise hot leads</li>
+                </ul>
               </div>
-              <ul className="mt-6 text-[15px] font-bold text-slate-900 space-y-2">
-                <li>• Weekly performance reviews</li>
-                <li>• Clear SOPs for your sales team</li>
-                <li>• 90-day roadmap with targets &amp; milestones</li>
-              </ul>
+
+              {/* Card 3 (Highlighted) */}
+              <div className="rounded-2xl p-6 flex flex-col justify-between bg-sky-950/20 border border-sky-800/60 hover:border-sky-500/60 hover:shadow-2xl hover:shadow-sky-900/20 transition duration-300">
+                <div>
+                  <h3 className="text-xl font-bold text-white">
+                    Performance Dashboard & Gameplan
+                  </h3>
+                  <p className="mt-3 text-base font-medium text-slate-400 leading-relaxed">
+                    See where every rupee is going – from spend → leads → site
+                    visits → bookings in one clear view.
+                  </p>
+                </div>
+                <ul className="mt-6 text-[15px] font-bold text-slate-300 space-y-2">
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Weekly performance reviews</li>
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> Clear SOPs for your sales team</li>
+                  <li className="flex items-center gap-2"><span className="text-sky-600 text-lg">•</span> 90-day roadmap with targets & milestones</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -512,11 +547,11 @@ export default function HomePage() {
         <h2 className="text-3xl md:text-5xl font-black text-slate-800">
           Ads are running. Leads are coming.{" "}
           <span className="text-sky-600 block md:inline">
-            Revenue isn&apos;t predictable.
+            Revenue isn't predictable.
           </span>
         </h2>
         <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">
-          If you&apos;re a CP, developer or broker, you&apos;ve probably felt at
+          If you're a CP, developer or broker, you've probably felt at
           least one of these in the last few months:
         </p>
       </div>
@@ -549,7 +584,7 @@ export default function HomePage() {
               .
             </li>
             <li>
-              • Different agencies for ads, landing pages &amp; CRM –{" "}
+              • Different agencies for ads, landing pages & CRM –{" "}
               <span className="font-bold text-white/90 bg-red-800/40 px-1">
                 there is no single owner of the full funnel
               </span>
@@ -560,7 +595,7 @@ export default function HomePage() {
 
         <div className="rounded-2xl p-8 space-y-5 bg-[#0f1720] border border-rose-800">
           <h3 className="text-xl font-bold text-rose-200 border-b pb-3 border-rose-800">
-            The real cost (that doesn&apos;t show in dashboard)
+            The real cost (that doesn't show in dashboard)
           </h3>
           <ul className="text-[16px] md:text-lg text-rose-200/90 space-y-4 font-medium">
             <li>
@@ -613,7 +648,7 @@ export default function HomePage() {
                 </span>
                 <p className="text-lg font-bold text-slate-50 mt-2">High-intent ads</p>
                 <p className="mt-2 text-slate-300 leading-relaxed">
-                  Creative + copy tuned for CPs &amp; developers to attract
+                  Creative + copy tuned for CPs & developers to attract
                   serious buyers, not just form fillers.
                 </p>
               </div>
@@ -624,7 +659,7 @@ export default function HomePage() {
                 </span>
                 <p className="text-lg font-bold text-slate-50 mt-2">AI follow-ups</p>
                 <p className="mt-2 text-slate-300 leading-relaxed">
-                  Automated sequences over WhatsApp, email &amp; SMS warm up leads
+                  Automated sequences over WhatsApp, email & SMS warm up leads
                   before your sales team calls.
                 </p>
               </div>
@@ -635,7 +670,7 @@ export default function HomePage() {
                 </span>
                 <p className="text-lg font-bold text-slate-50 mt-2">Site visit engine</p>
                 <p className="mt-2 text-slate-300 leading-relaxed">
-                  Smart reminders, time-slot nudges &amp; objection handling to
+                  Smart reminders, time-slot nudges & objection handling to
                   lock in confirmed site visits.
                 </p>
               </div>
@@ -646,8 +681,8 @@ export default function HomePage() {
                 </span>
                 <p className="text-lg font-bold text-slate-50 mt-2">Performance loop</p>
                 <p className="mt-2 text-slate-300 leading-relaxed">
-                  Weekly optimisation on creatives, audiences &amp; funnels to
-                  scale what&apos;s working.
+                  Weekly optimisation on creatives, audiences & funnels to
+                  scale what's working.
                 </p>
               </div>
             </div>
@@ -690,7 +725,7 @@ export default function HomePage() {
                     01
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-50">Deep-dive growth &amp; inventory audit</p>
+                    <p className="font-bold text-lg text-slate-50">Deep-dive growth & inventory audit</p>
                     <p className="mt-2 text-slate-300 font-medium leading-relaxed">
                       We map your projects, ticket sizes, current funnel and sales
                       reality to identify quick wins, leaks and realistic revenue
@@ -704,7 +739,7 @@ export default function HomePage() {
                     02
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-50">AI Ideal Customer Persona &amp; Creative Scripting</p>
+                    <p className="font-bold text-lg text-slate-50">AI Ideal Customer Persona & Creative Scripting</p>
                     <p className="mt-2 text-slate-300 font-medium leading-relaxed">
                       We build AI-assisted customer personas and human-plus-AI ad
                       scripting so your creatives stand out in the feed and never
@@ -718,9 +753,9 @@ export default function HomePage() {
                     03
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-50">Campaign &amp; funnel rollout</p>
+                    <p className="font-bold text-lg text-slate-50">Campaign & funnel rollout</p>
                     <p className="mt-2 text-slate-300 font-medium leading-relaxed">
-                      AI-powered Meta &amp; Google campaigns go live with aligned
+                      AI-powered Meta & Google campaigns go live with aligned
                       landing pages, tracking and routing – reaching ideal buyers,
                       warming them up and pushing site-visit-ready leads into your
                       calendar.
@@ -733,7 +768,7 @@ export default function HomePage() {
                     04
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-50">AI nurture flows &amp; site visit engine</p>
+                    <p className="font-bold text-lg text-slate-50">AI nurture flows & site visit engine</p>
                     <p className="mt-2 text-slate-300 font-medium leading-relaxed">
                       Our AI chatbot and integrated CRM start conversing with
                       leads, understanding intent and nudging them to book calls
@@ -762,7 +797,7 @@ export default function HomePage() {
                     06
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-50">Weekly performance review &amp; scale</p>
+                    <p className="font-bold text-lg text-slate-50">Weekly performance review & scale</p>
                     <p className="mt-2 text-slate-300 font-medium leading-relaxed">
                       Every week we review numbers with you, refine creatives, fix
                       leaks and scale the campaigns that are actually printing
@@ -783,8 +818,8 @@ export default function HomePage() {
                     </p>
                   </div>
                   <ul className="text-slate-200 mt-6 space-y-3 font-bold">
-                    <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Ideal buyer personas &amp; targeting angles.</li>
-                    <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Recommended Meta &amp; Google campaign structure.</li>
+                    <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Ideal buyer personas & targeting angles.</li>
+                    <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Recommended Meta & Google campaign structure.</li>
                     <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Nurture sequence outline (WhatsApp, Email, SMS).</li>
                     <li className="flex items-center gap-2"><span className="text-sky-500 text-xl">•</span> Site visit and follow-up SOPs for your sales team.</li>
                   </ul>
@@ -923,7 +958,7 @@ export default function HomePage() {
           </div>
         </section>
 
-      
+       
         {/* RECENT SCREENSHOTS FROM AD ACCOUNTS */}
         <section
           id="screenshots-ads"
@@ -1076,7 +1111,7 @@ export default function HomePage() {
                   See More
                 </p>
                 <p className="text-2xl font-bold leading-tight">
-                  View more ad accounts, spends &amp; dashboards.
+                  View more ad accounts, spends & dashboards.
                 </p>
               </div>
               <button className="btn-outline text-lg font-bold border-2 border-sky-500 text-sky-300 hover:bg-sky-500/10 px-8 py-4 rounded-xl">
@@ -1197,7 +1232,7 @@ export default function HomePage() {
             <p className="text-xl text-slate-800 font-medium leading-relaxed">
               Darshaan Jade is a serial entrepreneur with over{" "}
               <span className="font-bold text-sky-700 bg-sky-50 px-1">
-                8+ years across Digital Marketing, UX Design &amp; Sales
+                8+ years across Digital Marketing, UX Design & Sales
               </span>{" "}
               — working with builders, channel partners and realtors across
               India, managing over{" "}
@@ -1326,7 +1361,7 @@ export default function HomePage() {
                   </li>
                 </ul>
                 <p className="font-medium leading-relaxed">
-                  If you&apos;re tired of excuses, bad leads and money-burning
+                  If you're tired of excuses, bad leads and money-burning
                   campaigns, Jade_leads Digital / Jadeleads is where that cycle
                   ends.
                 </p>
@@ -1354,7 +1389,7 @@ export default function HomePage() {
         </section>
 
         {/* LOCATION / CONTACT */}
-       {/* LOCATION SECTION */}
+        {/* LOCATION SECTION */}
 <section
   id="location"
   className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20"
@@ -1453,6 +1488,101 @@ export default function HomePage() {
 
   </div>
 </div>
+
+      {/* --- POPUP MODAL (Automatically opens after 3s) --- */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity" 
+            onClick={() => setIsModalOpen(false)}
+          />
+          
+          {/* Modal Content */}
+          <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl shadow-sky-900/40 overflow-hidden animate-in fade-in zoom-in duration-300">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-sky-50 via-white to-sky-50 p-6 border-b border-sky-100 flex justify-between items-start">
+              <div>
+                <h3 className="text-2xl font-black text-slate-900 leading-tight">
+                  Get Your Growth Gameplan
+                </h3>
+                <p className="text-sm font-medium text-slate-500 mt-1">
+                  Fill the details below to book your strategy call.
+                </p>
+              </div>
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className="p-2 rounded-full hover:bg-slate-100 transition text-slate-400 hover:text-slate-600"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleFormSubmit} className="p-6 md:p-8 space-y-5">
+              
+              <div className="space-y-1.5">
+                <label className="text-sm font-bold text-slate-700 pl-1">Name</label>
+                <div className="relative group">
+                  <User className="absolute left-4 top-3.5 h-5 w-5 text-slate-400 group-focus-within:text-sky-500 transition" />
+                  <input 
+                    required
+                    type="text" 
+                    placeholder="Enter your full name"
+                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 font-medium rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-sm font-bold text-slate-700 pl-1">Email Address</label>
+                <div className="relative group">
+                  <Mail className="absolute left-4 top-3.5 h-5 w-5 text-slate-400 group-focus-within:text-sky-500 transition" />
+                  <input 
+                    required
+                    type="email" 
+                    placeholder="name@company.com"
+                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 font-medium rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-sm font-bold text-slate-700 pl-1">Phone Number</label>
+                <div className="relative group">
+                  <Phone className="absolute left-4 top-3.5 h-5 w-5 text-slate-400 group-focus-within:text-sky-500 transition" />
+                  <input 
+                    required
+                    type="tel" 
+                    placeholder="+91 98765 43210"
+                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 font-medium rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
+                  />
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="relative group w-full overflow-hidden bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 text-white shadow-lg shadow-sky-200
+                  text-lg font-bold uppercase tracking-wide py-4 rounded-xl"
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Book My Slot
+                    <ChevronRight className="h-6 w-6 stroke-[3px]" />
+                  </span>
+                  <span className="pointer-events-none absolute inset-0">
+                    <span className="absolute inset-0 -translate-x-full bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent)] group-hover:translate-x-full transition-transform duration-700 ease-out" />
+                  </span>
+                </button>
+                <p className="text-center text-xs font-medium text-slate-400 mt-3">
+                  100% Secure. We respect your privacy.
+                </p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      )}
 
     </div>
   );
