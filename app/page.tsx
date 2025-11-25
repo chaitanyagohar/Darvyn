@@ -1420,25 +1420,40 @@ export default function HomePage() {
       </main>
 
       {/* Sticky bottom CTA for mobile */}
-      <div className="fixed bottom-4 left-0 right-0 md:hidden z-50 px-4">
-        <div className="glass-panel px-4 py-4 flex items-center justify-between bg-slate-950 text-cyan-500 border-slate-800 shadow-2xl">
-          <div className="text-xs">
-            <p className="font-extrabold text-cyan-600 text-sm">
-              Build your Lead → Site Visit engine
-            </p>
-            <p className="text-slate-400 font-medium">
-              Limited onboarding slots available this month.
-            </p>
-          </div>
-          <button
-            onClick={handlePrimaryCTA}
-            className="btn-primary floating-btn group text-sm font-extrabold uppercase px-6 py-3 relative overflow-hidden bg-sky-400 text-slate-950 rounded-xl"
-          >
-            <span className="relative z-10">Book Call</span>
-            <span className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent)] group-hover:translate-x-full transition-transform duration-700 ease-out" />
-          </button>
-        </div>
-      </div>
+<div className="fixed bottom-4 left-0 right-0 md:hidden z-50 px-4">
+  <div className=" px-4 py-4 flex items-center justify-between 
+      bg-black/95 text-slate-200 border border-slate-700 shadow-2xl rounded-2xl backdrop-blur-xl">
+
+    <div className="text-xs">
+      <p className="font-extrabold text-slate-50 text-sm">
+        Build your Lead → Site Visit engine
+      </p>
+      <p className="text-slate-400 font-medium">
+        Limited onboarding slots available this month.
+      </p>
+    </div>
+
+    <button
+      onClick={handlePrimaryCTA}
+      className="relative floating-btn group text-sm font-extrabold uppercase
+      px-6 py-3 overflow-hidden 
+      bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 
+      text-white rounded-xl shadow-lg shadow-sky-600/40"
+    >
+      <span className="relative z-10">Book Call</span>
+
+      {/* metallic glare */}
+      <span className="pointer-events-none absolute inset-0 
+        -translate-x-full 
+        bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent)]
+        group-hover:translate-x-full 
+        transition-transform duration-700 ease-out" 
+      />
+    </button>
+
+  </div>
+</div>
+
     </div>
   );
 }
