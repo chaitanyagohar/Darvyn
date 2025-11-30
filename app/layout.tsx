@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Darvyn Digital | Real Estate Growth Engine",
+  title: "DARVYN DIGITAL | Real estate marketing agency",
   description:
     "We help Realtors & Developers build a predictable Lead → Nurture → Site Visit → Sales engine using AI & Performance Marketing.",
 };
