@@ -8,11 +8,7 @@ import {
   MapPin, 
   Play, 
   Star, 
-  X,      // Added for popup close button
-  User,   // Added for name field
-  Mail,   // Added for email field
-  Phone, 
-  AlertTriangle  // Added for phone field
+  AlertTriangle 
 } from "lucide-react";
 
 // ---------- DATA ----------
@@ -33,13 +29,13 @@ const videoTestimonials = [
       "Cost per lead dropped and lead quality has never been this better for us.",
     src: "/vagamine.mp4",
   },
-  {
-    name: "Jalaj Kedia, Apni Properties",
-    role: "Premium townships & projects",
-    highlight:
-      "The quality and quantity of leads were so good that I couldn’t handle all of them at once.",
-    src: "/jalaj.mp4",
-  },
+  // {
+  //   name: "Jalaj Kedia, Apni Properties",
+  //   role: "Premium townships & projects",
+  //   highlight:
+  //     "The quality and quantity of leads were so good that I couldn’t handle all of them at once.",
+  //   src: "/jalaj.mp4",
+  // },
 ];
 
 // BIG WRITTEN TESTIMONIAL SLIDER – central quote
@@ -65,8 +61,8 @@ const writtenHighlightTestimonials = [
   {
     quote:
       "Their drip flows and automations made our sales team’s life much easier – more qualified conversations, less chaos.",
-    name: "CP PARTNER",
-    company: "Multiple Projects",
+    name: "Siddharth",
+    company: "Property pulse",
   },
 ];
 
@@ -152,7 +148,7 @@ const adScreenshots = [
       spend: "₹9,866.28",
     },
   },
-  
+   
 ];
 
 // DRIP FLOW AUTOMATIONS – images from /public
@@ -184,9 +180,6 @@ export default function HomePage() {
   const [activeAdIndex, setActiveAdIndex] = useState(0);
   const [activeFlowIndex, setActiveFlowIndex] = useState(0);
 
-  // --- NEW: State for the Popup ---
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -194,26 +187,10 @@ export default function HomePage() {
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  // --- UPDATED: Opens Calendly Link ---
   const handlePrimaryCTA = () => {
-    // Open the popup when they click the main buttons
-    setIsModalOpen(true);
+    window.open("https://calendly.com/contact-darvyn/30min", "_blank");
   };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add API logic here
-    alert("Request received!");
-    setIsModalOpen(false);
-  };
-
-  // --- NEW: Auto-open popup after 3 seconds ---
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsModalOpen(true);
-    }, 3000); // 3000ms = 3 seconds
-
-    return () => clearTimeout(timer); // Cleanup timer if component unmounts
-  }, []);
 
   const activeWritten = writtenHighlightTestimonials[activeWrittenIndex];
 
@@ -269,7 +246,7 @@ export default function HomePage() {
                   <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] font-black tracking-tight text-slate-950 leading-[1.1]">
                     We help{" "}
                     <span className="bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 bg-clip-text text-transparent">
-                      CPs & Developers
+                      Realtors & Developers
                     </span>{" "}
                     build a predictable
                     <span className="block mt-2 text-slate-900">
@@ -298,26 +275,15 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* MOBILE VIDEO */}
+                {/* MOBILE "Who this is for" (Video removed) */}
                 <div className="glass-panel lg:hidden border-sky-100/70 bg-white/90 shadow-lg shadow-sky-100/60 p-5 flex flex-col gap-4">
-                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-sky-100 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-700 flex items-center justify-center">
-                    <button className="group relative flex h-16 w-16 items-center justify-center rounded-full bg-black/40 backdrop-blur">
-                      <div className="absolute inset-0 rounded-full bg-white/40 blur-2xl group-hover:bg-white/60 transition" />
-                      <Play className="relative h-7 w-7 text-white" />
-                    </button>
-                    <div className="absolute bottom-3 left-3 rounded-full bg-black/75 px-3 py-1.5 text-xs font-bold text-slate-50">
-                      Watch: 4-min breakdown of the Lead → Nurture → Site Visit
-                      engine
-                    </div>
-                  </div>
-
                   <div className="space-y-2">
                     <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-sky-600">
                       Who this is for
                     </p>
                     <div className="grid grid-cols-2 gap-2 text-sm text-slate-900 font-bold">
                       <span className="tag-chip w-full justify-center bg-sky-50 border-sky-100 py-2">
-                        Channel Partners (CPs)
+                        Realtors
                       </span>
                       <span className="tag-chip w-full justify-center bg-sky-50 border-sky-100 py-2">
                         Builders & Developers
@@ -364,7 +330,7 @@ export default function HomePage() {
                 <div className="flex flex-wrap items-center gap-3 text-sm md:text-base text-slate-800 font-bold">
                   <div className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                    100+ campaigns for builders, CPs & brokers
+                    100+ campaigns for builders, Realtors & brokers
                   </div>
                   <span className="hidden sm:inline-block h-1 w-1 bg-slate-400 rounded-full" />
                   <span>
@@ -392,7 +358,7 @@ export default function HomePage() {
                         </span>
                       </div>
                       <p className="text-xs font-semibold text-slate-600 mt-1">
-                        Trusted by CPs, Developers & Brokers across major
+                        Trusted by Realtors, Developers & Brokers across major
                         Indian metros.
                       </p>
                     </div>
@@ -412,26 +378,16 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* RIGHT: VIDEO CARD (desktop only) */}
+              {/* RIGHT: CARD (desktop only - Video removed) */}
               <div className="glass-panel hidden lg:flex flex-col gap-6 p-6 border-sky-100 bg-white/95 shadow-2xl shadow-sky-100/80">
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-sky-100 bg-gradient-to-br from-slate-900 via-slate-800 to-sky-700 flex items-center justify-center hover:scale-[1.02] transition-transform duration-500">
-                  <button className="group relative flex h-20 w-20 items-center justify-center rounded-full bg-black/40 backdrop-blur">
-                    <div className="absolute inset-0 rounded-full bg-white/40 blur-2xl group-hover:bg-white/60 transition" />
-                    <Play className="relative h-8 w-8 text-white" />
-                  </button>
-                  <div className="absolute bottom-4 left-4 rounded-full bg-black/75 px-4 py-1.5 text-xs font-bold text-slate-50">
-                    Watch: 4-min breakdown of the Lead → Nurture → Site Visit
-                    engine
-                  </div>
-                </div>
-
+                
                 <div className="space-y-4">
                   <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-sky-600">
                     Who this is for
                   </p>
                   <div className="grid grid-cols-2 gap-3 text-sm text-slate-900 font-bold">
                     <span className="tag-chip w-full justify-center bg-sky-50 border-sky-100 py-2.5">
-                      Channel Partners (CPs)
+                      Realtors
                     </span>
                     <span className="tag-chip w-full justify-center bg-sky-50 border-sky-100 py-2.5">
                       Builders & Developers
@@ -563,7 +519,7 @@ export default function HomePage() {
           </span>
         </h2>
         <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">
-          If you're a CP, developer or broker, you've probably felt at
+          If you're a Realtor, developer or broker, you've probably felt at
           least one of these in the last few months:
         </p>
       </div>
@@ -972,7 +928,7 @@ export default function HomePage() {
 
        
         {/* RECENT SCREENSHOTS FROM AD ACCOUNTS */}
-        <section
+        {/* <section
           id="screenshots-ads"
           className="section-wrapper max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-20"
         >
@@ -988,8 +944,6 @@ export default function HomePage() {
               clients using our AI-powered lead and sales systems.
             </p>
           </div>
-
-          {/* Mobile auto slider */}
           <div className="mt-8 md:hidden relative overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-out"
@@ -1064,7 +1018,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Desktop grid */}
           <div className="mt-10 hidden md:grid md:grid-cols-2 xl:grid-cols-3 gap-8">
             {adScreenshots.map((shot, idx) => (
               <article
@@ -1131,7 +1084,7 @@ export default function HomePage() {
               </button>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* DRIP FLOW AUTOMATIONS – WhatsApp only */}
         <section
@@ -1500,101 +1453,6 @@ export default function HomePage() {
 
   </div>
 </div>
-
-      {/* --- POPUP MODAL (Automatically opens after 3s) --- */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity" 
-            onClick={() => setIsModalOpen(false)}
-          />
-          
-          {/* Modal Content */}
-          <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl shadow-sky-900/40 overflow-hidden animate-in fade-in zoom-in duration-300">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-sky-50 via-white to-sky-50 p-6 border-b border-sky-100 flex justify-between items-start">
-              <div>
-                <h3 className="text-2xl font-black text-slate-900 leading-tight">
-                  Get Your Growth Gameplan
-                </h3>
-                <p className="text-sm font-medium text-slate-500 mt-1">
-                  Fill the details below to book your strategy call.
-                </p>
-              </div>
-              <button 
-                onClick={() => setIsModalOpen(false)}
-                className="p-2 rounded-full hover:bg-slate-100 transition text-slate-400 hover:text-slate-600"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-
-            {/* Form */}
-            <form onSubmit={handleFormSubmit} className="p-6 md:p-8 space-y-5">
-              
-              <div className="space-y-1.5">
-                <label className="text-sm font-bold text-slate-700 pl-1">Name</label>
-                <div className="relative group">
-                  <User className="absolute left-4 top-3.5 h-5 w-5 text-slate-400 group-focus-within:text-sky-500 transition" />
-                  <input 
-                    required
-                    type="text" 
-                    placeholder="Enter your full name"
-                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 font-medium rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <label className="text-sm font-bold text-slate-700 pl-1">Email Address</label>
-                <div className="relative group">
-                  <Mail className="absolute left-4 top-3.5 h-5 w-5 text-slate-400 group-focus-within:text-sky-500 transition" />
-                  <input 
-                    required
-                    type="email" 
-                    placeholder="name@company.com"
-                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 font-medium rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <label className="text-sm font-bold text-slate-700 pl-1">Phone Number</label>
-                <div className="relative group">
-                  <Phone className="absolute left-4 top-3.5 h-5 w-5 text-slate-400 group-focus-within:text-sky-500 transition" />
-                  <input 
-                    required
-                    type="tel" 
-                    placeholder="+91 98765 43210"
-                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 font-medium rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition"
-                  />
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  className="relative group w-full overflow-hidden bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 text-white shadow-lg shadow-sky-200
-                  text-lg font-bold uppercase tracking-wide py-4 rounded-xl"
-                >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    Book My Slot
-                    <ChevronRight className="h-6 w-6 stroke-[3px]" />
-                  </span>
-                  <span className="pointer-events-none absolute inset-0">
-                    <span className="absolute inset-0 -translate-x-full bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.8),transparent)] group-hover:translate-x-full transition-transform duration-700 ease-out" />
-                  </span>
-                </button>
-                <p className="text-center text-xs font-medium text-slate-400 mt-3">
-                  100% Secure. We respect your privacy.
-                </p>
-              </div>
-
-            </form>
-          </div>
-        </div>
-      )}
 
     </div>
   );
