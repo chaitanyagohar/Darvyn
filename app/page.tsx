@@ -682,7 +682,7 @@ export default function HomePage() {
                 Process
               </p>
               <h2 className="text-3xl md:text-5xl font-black text-slate-50">
-                What happens in your first 90 days with Jade_leads.
+                What happens in your first 90 days with Darvyn Digital.
               </h2>
             </div>
 
@@ -1327,7 +1327,7 @@ export default function HomePage() {
                 </ul>
                 <p className="font-medium leading-relaxed">
                   If you're tired of excuses, bad leads and money-burning
-                  campaigns, Jade_leads Digital / Jadeleads is where that cycle
+                  campaigns, Darvyn Digital / Jadeleads is where that cycle
                   ends.
                 </p>
 
