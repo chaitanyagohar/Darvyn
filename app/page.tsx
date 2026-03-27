@@ -189,7 +189,7 @@ export default function HomePage() {
 
   // --- UPDATED: Opens Calendly Link ---
   const handlePrimaryCTA = () => {
-    window.open("https://calendly.com/contact-darvyn/30min", "_blank");
+    window.open("https://cal.com/darshan-jade-dukybg", "_blank");
   };
 
   const activeWritten = writtenHighlightTestimonials[activeWrittenIndex];
