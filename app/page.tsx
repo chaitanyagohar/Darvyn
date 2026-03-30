@@ -266,14 +266,14 @@ export default function HomePage() {
                 </div>
 
                 {/* --- WARNING LINE --- */}
-                <div className="max-w-xl">
+                {/* <div className="max-w-xl">
                   <div className="inline-flex items-start md:items-center gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-2 text-sm font-bold text-red-900 shadow-sm">
                     <AlertTriangle className="h-5 w-5 text-red-600 shrink-0" />
                     <span>
                       Please Note: If your monthly marketing budget is less than ₹50,000, please skip booking a call.
                     </span>
                   </div>
-                </div>
+                </div> */}
 
                 {/* MOBILE "Who this is for" (Video removed) */}
                 <div className="glass-panel lg:hidden border-sky-100/70 bg-white/90 shadow-lg shadow-sky-100/60 p-5 flex flex-col gap-4">
